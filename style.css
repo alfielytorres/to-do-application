@@ -1,0 +1,25 @@
+body{
+    display:flex;
+    flex-direction: column;
+   
+}
+main{
+    padding:45px;
+    background-color:black;
+    flex-grow:1;
+    color:white;
+}
+
+footer{
+    padding:10px 50px 10px 50px;
+    background-color:#0C6EFD;
+    
+
+    color:white;
+}
+h1{
+    color:white;
+}
+h2{
+    color:white;
+}
