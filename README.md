@@ -7,4 +7,4 @@ vanilla es6 javascript to do application. Made for Andrew Mead's Modern JavaScri
 
 See the Pen <a href='https://codepen.io/alfielytorres/full/zYrLxBp'>to do application</a> by Alfie Torres (<a href='https://codepen.io/alfielytorres'>@alfielytorres</a>) on <a href='https://codepen.io'>CodePen</a>.
 
-<img src="https://i.imgur.com/8CM8Dsd.mp4" width="1000"/>
+<img src="https://i.imgur.com/8CM8Dsd.gif" width="1000"/>
