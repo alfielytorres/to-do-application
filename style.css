@@ -1,13 +1,26 @@
 body{
     display:flex;
     flex-direction: column;
-   
+    background-color:black;
 }
 main{
     padding:45px;
     background-color:black;
     flex-grow:1;
     color:white;
+}
+
+.todo{
+    display:flex;
+    justify-content: space-between;
+}
+
+.grouped-buttons{
+    margin: 0 10px 0 0;
+}
+
+.grouped-buttons-div{
+    display:flex;
 }
 
 footer{
@@ -21,5 +34,5 @@ h1{
     color:white;
 }
 h2{
-    color:white;
+    color:#4a93ff;
 }

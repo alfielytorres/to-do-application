@@ -7,36 +7,59 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
-    <title>To Do App</title>
+    <title>Form App</title>
 </head>
 <body>
     <footer>
         Made with ❤️ by Alfie Torres
     </footer>
     <main>
-    <h1>To Do App</h1>
-    <h2>Add tasks and never forget</h2>
+    <h1>Form App</h1>
+    <div id="notify">
+        
+    </div>
     <br>
     
     <div class="input-group">
         <div class="input-group-prepend">
-            <span class="input-group-text">Filter To Do</span>
+            <span class="input-group-text">Search</span>
           </div>
         <input type="text" id="search" class="form-control" placeholder="Find Task">
     </div>
     <br>
-     <!-- Input Add -->
-    <div id="addTasks" class="input-group">
-        <input type="text" id="input" class="form-control" placeholder="Add Task">
-        <button id="add" type="button" class="btn btn-primary">Add Task</button>
-        <button id="reset" type="button" class="btn btn-secondary">Remove All Notes</button>
-    </div>
-    
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Hide Completed</span>
+        </div>
+        
+        <div class="input-group-text">
+            <input id="hide-completed" type="checkbox">
+        </div>
+        
+        
+      </div>
+
     <br>
+     <!-- Input Add -->
+    
+    <form id="add-form">
+    
+        <input type="text" name="task"  class="form-control" placeholder="Add Task">
+        <br>
+        <button  class="btn btn-primary">Add Task</button>
+    
+    </form>
+    <button id="reset"  class="btn btn-secondary">Remove All Notes</button>
+
+    <br>
+    <br>
+    
     <!-- Tasks -->
     <div id="tasks"></div>
     </main>
-
-    <script src="script.js"></script>
+    <!-- add uuid v4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <script src="functions.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
