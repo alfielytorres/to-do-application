@@ -4,6 +4,7 @@ vanilla es6 javascript to do application. Made for Andrew Mead's Modern JavaScri
 - allows users to mark todos as complete 
 - allows users to delete todos
 - uses the UUID external library
+- users can edit their notes
 
 See the Pen <a href='https://codepen.io/alfielytorres/full/zYrLxBp'>to do application</a> by Alfie Torres (<a href='https://codepen.io/alfielytorres'>@alfielytorres</a>) on <a href='https://codepen.io'>CodePen</a>.
 
