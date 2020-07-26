@@ -6,6 +6,6 @@ vanilla es6 javascript to do application. Made for Andrew Mead's Modern JavaScri
 - uses the UUID external library
 - users can edit their notes
 
-See the Pen <a href='https://codepen.io/alfielytorres/full/zYrLxBp'>to do application</a> by Alfie Torres (<a href='https://codepen.io/alfielytorres'>@alfielytorres</a>) on <a href='https://codepen.io'>CodePen</a>.
+See the Pen <a href='https://codepen.io/alfielytorres/project/full/Abnqrd'>to do application</a> by Alfie Torres (<a href='https://codepen.io/alfielytorres'>@alfielytorres</a>) on <a href='https://codepen.io'>CodePen</a>.
 
-<img src="https://i.imgur.com/OJllVWa.gif" width="1000"/>
+<img src="https://i.imgur.com/ZXNIyAQ.gif" width="1000"/>
