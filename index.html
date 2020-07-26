@@ -14,12 +14,21 @@
         Made with ❤️ by Alfie Torres
     </footer>
     <main>
-    <h1>Form App</h1>
+    <h1>To Do App</h1>
     <div id="notify">
         
     </div>
     <br>
+
     
+    <select class="select-css" id="filter-by">
+        <option value="byEdited">Sort by last edited</option>
+        <option value="byCreated">Sort by recently created</option>
+        <option value="alphabetical">Sort alphabetically</option>
+    </select>
+
+
+    <br>
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text">Search</span>
@@ -39,6 +48,7 @@
         
       </div>
 
+    
     <br>
      <!-- Input Add -->
     
@@ -58,6 +68,7 @@
     <div id="tasks"></div>
     </main>
     <!-- add uuid v4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
     <script src="functions.js"></script>
     <script src="app.js"></script>

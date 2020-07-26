@@ -9,15 +9,27 @@ const filters = {
 document.querySelector('#add-form').addEventListener('submit', function(e){
     e.preventDefault() //allows us to handle the form submission
     const taskText = e.target.elements.task.value
+    const uuid=uuidv4()
+    const createdAt= new moment()
+    const timestamp = createdAt.valueOf()
+    console.log(timestamp)
+    
     todos.push({
-        id:uuidv4(),
+        id:uuid,
         task:taskText,
-        isCompleted:false
+        body:"",
+        isCompleted:false,
+        createdAt:timestamp,
+        updatedAt:timestamp
     })
     saveTodos(todos)
     console.log(todos)
     renderTodos(todos, filters)
 
+    const baseURL = 'edit_page.html'
+    let toDoURL = `${baseURL}#${uuid}`
+
+    location.assign(toDoURL)
 })
 
 // delete
@@ -47,3 +59,64 @@ document.querySelector('#hide-completed').addEventListener('change', function(e)
 renderTodos(todos,filters)
 
 
+window.addEventListener('storage', function(e){
+    
+
+    if(e.key=="todos"){
+        const newTodos = JSON.parse(e.newValue)
+        
+        
+        renderTodos(newTodos,filters)
+
+       
+       
+    }
+    
+})
+
+
+document.querySelector('#filter-by').addEventListener('change', function (e) {
+    if(e.target.value==="byEdited"){
+        todos.sort(function(a,b){
+            if(a.updatedAt>b.updatedAt){
+                return -1
+            } else if (a.updatedAt <b.updatedAt){
+                return 1
+            }else{
+                return 0
+            }
+        })
+        document.querySelector('#tasks').textContent= ''
+        renderTodos(todos,filters)
+    }else if(e.target.value==="byCreated"){
+        todos.sort(function(a,b){
+            if(a.createdAt>b.createdAt){
+                return -1
+            } else if (b.createdAt < a.createdAt){
+                return 1
+            }else{
+                return 0
+            }
+        })
+        document.querySelector('#tasks').textContent= ''
+        renderTodos(todos,filters)
+    }else if(e.target.value==="alphabetical"){
+        todos.sort(function(a,b){
+            if(a.task.toLowerCase()<b.task.toLowerCase()){
+                return -1
+            } else if (b.task.toLowerCase() < b.task.toLowerCase()){
+                return 1
+            }else{
+                return 0
+            }
+        })
+        document.querySelector('#tasks').textContent= ''
+        renderTodos(todos,filters)
+
+    }else{
+        console.log("error")
+    }
+
+    
+    
+})

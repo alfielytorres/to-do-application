@@ -41,8 +41,17 @@ const toggleTodo = function(id){
 
 // generate todo dom  
 const generateTodoDOM = function(todo){
-        const task = document.createElement('div')    
+        
 
+        // add edit 
+        const baseURL = 'edit_page.html'
+        let toDoURL = `${baseURL}#${todo.id}`
+
+        const editLink = document.createElement('a')
+        editLink.setAttribute('class', 'link-primary edit grouped-buttons')
+        editLink.setAttribute('href', toDoURL)
+
+        editLink.textContent = "✏️"
         //done button switch 
             //div for switch
             const doneDiv = document.createElement('div')
@@ -77,6 +86,7 @@ const generateTodoDOM = function(todo){
 
         deleteButton.addEventListener('click', function(){
             removeTodo(todo.id)
+            saveTodos(todos)
             renderTodos(todos,filters)
         })
 
@@ -86,12 +96,25 @@ const generateTodoDOM = function(todo){
         buttons.setAttribute('class','grouped-buttons-div')
 
         //task
+        const task = document.createElement('div')    
         task.setAttribute('class','alert alert-primary task-item todo' )
-        task.textContent = todo.task
+        const created = moment(todo.createdAt)
+        const updated = moment(todo.updatedAt)
+        task.textContent = `
+        ${todo.task} 
+        edited ${updated.fromNow()}
+        `
+        
+        
 
+     
         task.appendChild(buttons)
+        buttons.appendChild(editLink)
         buttons.appendChild(deleteButton)
         buttons.appendChild(doneDiv)
+        
+        
+        
 
         return task
 }
@@ -106,7 +129,7 @@ const generateNotificationPanelDOM = function(incompleteTodos){
 }
 
 //render the UI 
-const renderTodos = function(todos, query){
+const renderTodos = function(todos, query=filters){
 
     //find the filtered todos
     const filteredTodos = todos.filter(function (todo) {
